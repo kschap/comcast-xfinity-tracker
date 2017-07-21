@@ -1,14 +1,10 @@
-# Speed tester for Comcast/Xfinity internet service.
-# I'm paying for 150Mbits/sec, and I'd be darned if I get any less than what's reasonable!
+# Speed tester for ISP internet service.
 import tweepy
 import speedtest
 
 
 def tweet_send(simpleDownload, simpleUpload):
     # Variables that contains the user credentials to access Twitter API.
-    # Should probably make this a lot easier to use before putting on GitHub.
-    # Also,
-    # TODO: REMOVE KEYS BEFORE POSTING ON GITHUB!
     consumer_key = "" # Twitter consumer key
     consumer_secret = "" # Twitter secret key
     access_token = "" # Twitter account access token
@@ -44,8 +40,8 @@ def speed_test():
     print("Test data written to file.")
 
     # Math to determine if threshhold is met/not met
-    TARGET_SPEED = 150  # Advertised speed they gave to you on signup for service
-    MARGIN_OF_ERROR = 0.5  # Percentage, in decimal format, you're willing to compromise on
+    TARGET_SPEED = 150  # Advertised speed
+    MARGIN_OF_ERROR = 0.5  # Percentage, in decimal format, of the amount of deviation from advertised speed
     # Because, let's face it, you won't get full speed all the time
     # But if it's really bad (Think, 50% worse than advertised, for example), that's bad
     simpleDownload = round(downloadSpeedRaw / 1000000, 2)
@@ -57,5 +53,5 @@ def speed_test():
         print("All is good.\nDownload: {}\nUpload: {}".format(simpleDownload, simpleUpload))
         return 0
 
-print("Comcast/Xfinity Speed Tester, Version 1.0")
+print("ISP Speed Tester, Version 1.0")
 speed_test()
