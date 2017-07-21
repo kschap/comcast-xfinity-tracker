@@ -13,6 +13,7 @@ def tweet_send(simpleDownload, simpleUpload):
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth)
+    # Tweet to be sent goes below in the parenthesis.
     api.update_status("Hey, @ComcastCares, I'm paying for 150Mbps service. I'm only getting {}Mbps down/{}Mbps up. All is good on my end. What gives?".format(simpleDownload, simpleUpload))
     print("Tweet posted!")
     return 0
