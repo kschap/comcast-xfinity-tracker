@@ -1,4 +1,4 @@
-# comcast-xfinity-tracker
+# ISP Speed Shamer
 This is a very simple script that can be deployed to any Raspberry Pi in order to test, track, and tweet to the appropriate Twitter account, whenever internet speeds reach a certain point. It can be used for any ISP that has a public Twitter account.
 
 # Requirements
